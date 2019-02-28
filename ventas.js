@@ -38,14 +38,20 @@ class Producto {
 }
 
 class Servicio extends Producto {
-    constructor(nombre, precio) {
+    constructor(nombre, precio) {   
         super(nombre, precio);
+    }
+    calcularTarifa(tiempo){
+        return (this.precio*tiempo);
     }
 }
 
 class Articulo extends Producto {
     constructor(nombre, precio) {
         super(nombre, precio);
+    }
+    calcularTarifa(cantidad){
+        return(this.precio*cantidad);
     }
 }
 
