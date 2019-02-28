@@ -10,9 +10,9 @@ describe('Venta',function(){
         expect(venta.total()).equal(0);
     });
     it('total de venta con un producto deberia devolver',function(){
-        /*let venta=new departamentoVentas.Venta();
-        let mantenimiento= new servicio("Mantenimiento",10);
-        venta.add(mantenimiento,1);
-        expect(venta.total()).equal(115);*/
+        let venta=new departamentoVentas.Venta();
+        let mantenimiento= new departamentoVentas.Servicio("Mantenimiento",10);
+        //venta.add(mantenimiento,115);
+        expect(venta.total()).equal(115);
     });
 });

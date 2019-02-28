@@ -1,7 +1,11 @@
 
 class Venta{
     constructor(){
-        //this.carritoDeCompras=new Array;
+        this.carritoDeCompras=new Array;
+    }
+
+    agregarAlCarrito(item){
+        this.carritoDeCompras.push(item);
     }
  
     total(){
@@ -9,15 +13,25 @@ class Venta{
     }
 
 }
-class Servicio{
-    constructor(){
 
-    }
-}
 class Producto{
-    constructor(){
-        
+    constructor(nombre,precio){
+        this.nombre=nombre;
+        this.precio=precio;
     }
 }
 
-module.exports =  { Venta, Servicio, Producto }
+class Servicio extends Producto{
+    constructor(nombre,precio){
+        super(nombre,precio);
+    }
+}
+
+
+class Articulo extends Producto{
+    constructor(){
+
+    }
+}
+
+module.exports =  { Venta, Servicio, Producto, Articulo }
