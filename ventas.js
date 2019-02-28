@@ -20,4 +20,4 @@ class Producto{
     }
 }
 
-module.exports = Venta;
+module.exports =  { Venta, Servicio, Producto }
