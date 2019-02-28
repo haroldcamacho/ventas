@@ -1,15 +1,27 @@
 
 class Venta{
     constructor(){
-        this.carritoDeCompras=new Array;
+        this.carritoDeCompras=new Array();
     }
 
-    agregarAlCarrito(item){
-        this.carritoDeCompras.push(item);
+    agregarAlCarrito(producto,cantidad){
+        let venta={
+            prod:producto,
+            cant:cantidad
+        };
+        this.carritoDeCompras.push(venta);
     }
  
     total(){
-        return 0;
+        let total=0;
+        if(this.carritoDeCompras.length>0){
+        this.carritoDeCompras.forEach(function(item){
+            const producto=item.prod;
+            const cantidad=item.cant;
+            total+=producto.precio*cantidad;
+        });
+        }
+        return total;
     }
 
 }
@@ -29,8 +41,8 @@ class Servicio extends Producto{
 
 
 class Articulo extends Producto{
-    constructor(){
-
+    constructor(nombre,precio){
+        super(nombre,precio);
     }
 }
 

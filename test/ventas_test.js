@@ -11,8 +11,8 @@ describe('Venta',function(){
     });
     it('total de venta con un producto deberia devolver',function(){
         let venta=new departamentoVentas.Venta();
-        let mantenimiento= new departamentoVentas.Servicio("Mantenimiento",10);
-        //venta.add(mantenimiento,115);
+        let mantenimiento= new departamentoVentas.Servicio("Mantenimiento",115);
+        venta.agregarAlCarrito(mantenimiento,1);
         expect(venta.total()).equal(115);
     });
 });
